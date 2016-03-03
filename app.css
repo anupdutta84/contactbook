@@ -1,0 +1,176 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0px;
+	font-family: sans-serif;
+}
+
+button {
+	background-color: #297DFF;
+	color: whitesmoke;
+	min-width: 80px;
+	padding: 8px;
+	border-radius: 8px;
+	margin: 2px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+button:disabled {
+	background-color: #cdcdcd;
+}
+
+.pageheader {
+	width: 100%;
+	height: 45px;
+	background-color: #F46B75;
+	text-align: center;
+	color: white;
+	padding-top: 10px;
+	font-size: 30px;
+}
+
+.pagefooter {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 45px;
+	background-color: #F46B75;
+	text-align: center;
+	color: white;
+	padding-top: 20px;
+	font-size: 25px;
+}
+
+.row {
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+#mainContainer {
+	width: 100%;
+	display: block;
+	float: left;
+}
+
+#contactList {
+	width: 28.5%;
+	height: 100%;
+	border-right: 2px solid #ddd;
+	display: block;
+	float: left;
+	display: block;
+}
+
+#contactEdit {
+	width: 70%;
+	height: 100%;
+	display: none;
+	float: left;
+	margin: 0% 0% 0% 0.2%;
+}
+
+#contactEdit label {
+	display: block;
+	float: left;
+	text-align: left;
+	width: 50%;
+}
+
+#contactEdit input {
+	display: block;
+	float: left;
+	height: 27px;
+	padding: 6px;
+	margin: 5px;
+	border-radius: 6px;
+	border: 1px solid #cdd;
+}
+
+.leftSection {
+	display: block;
+	float: left;
+	width: 60%;
+}
+
+.rightSection {
+	display: block;
+	float: left;
+	width: 40%;
+}
+
+.uploadImg {
+	display: block;
+	background-color: #D3D4D3;
+	border: 10px solid #929292;
+	width: 150px;
+	height: 210px;
+}
+
+.listrow {
+	display: block;
+	width: 100%;
+	float: left;
+	border-top: 1px solid #ccc;
+	margin-top: 9px;
+}
+
+.dataRow {
+	display: block;
+	width: 95%;
+	float: left;
+	margin: 9px 0px 0px 6px;
+}
+
+.centerPos {
+	margin: 0 auto;
+}
+
+.editsection {
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	min-width: 50px;
+	float: right;
+}
+
+.fullname {
+	display: block;
+	float: left;
+	margin: 12px 0px 2px 8px;
+	max-width: 67%;
+}
+
+.listHeader {
+	text-align: right;
+	padding: 6px 4px 0px 0px;
+}
+
+.leftContainer {
+	display: block;
+	width: 70%;
+	margin: 25px 10% 0px 10%;
+	float: left;
+}
+
+.leftHeader {
+	text-align: center;
+	font-size: 30px;
+	color: #575757;
+	border-bottom: 1px solid #cdcdcd;
+	width: 100%;
+	display: block;
+	float: left;
+	padding: 4px;
+}
+
+.leftFooter {
+	text-align: right;
+	border-top: 1px solid #cdcdcd;
+	width: 100%;
+	display: block;
+	float: left;
+	padding: 4px;
+	margin-top: 60px;
+}

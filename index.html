@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="app.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script type="text/javascript" src="ngMask.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="contactModule.js"></script>
+
+<body ng-app="contactModule" ng-cloak>
+	<header class="pageheader"> My Contact</header>
+
+	<!-- Main row -->
+	<section id="mainContainer" ng-controller="cbCtrl">
+		<!-- Contact List -->
+		<section id="contactList">
+			<header class="listHeader">
+				<button ng-click="add()">+ New</button>
+			</header>
+			<div class="listrow" ng-repeat="rec in contactList">
+				<div class="dataRow">
+					<span class="fullname">{{rec.firstName}} {{rec.lastName}}</span>
+					<button class="editsection" ng-click="del($index)">Delete</button>
+					<button class="editsection" ng-click="edit($index)">Edit</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Edit -->
+		<section id="contactEdit" class="row">
+			<form name="userForm" ng-submit="submitForm(userForm.$valid)"
+				novalidate>
+				<header class="leftHeader"> Add or Edit Contact (Full Name)</header>
+				<div class="leftContainer">
+					<div class="leftSection">
+						<div class="row">
+							<label for="firstName">First Name </label> <input type="text"
+								ng-model="currentRecord.firstName" name="firstName"
+								id="firstName" value="" placeholder="Enter First Name" required />
+						</div>
+
+						<div class="row">
+							<label for="lastName">Last Name </label> <input type="text"
+								ng-model="currentRecord.lastName" name="lastName" id="lastName"
+								value="" placeholder="Enter Last Name" required />
+						</div>
+
+						<div class="row">
+							<label for="birthday">Birth Day </label> <input type="text"
+								ng-model="currentRecord.birthday" mask='39/19/9999'
+								name="birthday" id="birthday" value="" placeholder="DD/MM/YYYY"
+								required />
+						</div>
+
+						<div class="row">
+							<label for="company">Company</label> <input type="text"
+								ng-model="currentRecord.company" name="company" id="company"
+								value="" placeholder="Enter Company" />
+						</div>
+
+						<div class="row">
+							<label for="email">Email Address</label> <input type="email"
+								ng-model="currentRecord.email" name="email" id="email" value=""
+								placeholder="example@domain.com" required />
+						</div>
+						<div class="row">
+							<label for="mobile">Mobile</label> <input type="text"
+								name="mobile" ng-model="currentRecord.mobile"
+								mask="999-999-9999" id="mobile" value=""
+								placeholder="000-000-0000" required />
+						</div>
+					</div>
+					<div class="rightSection">
+						<div class="row">
+							<div class="uploadImg centerPos">
+								<img id="uploadedImg" src="" style="display: none;" />
+							</div>
+						</div>
+						<div class="row" style="text-align: center">
+							<button id="uploadButton"
+								ng-click="uploadImage();$event.preventDefault()">Upload
+								Image</button>
+							<input id="imagefile" type="file" name="imagefile"
+								style="display: none" />
+						</div>
+					</div>
+				</div>
+				<footer class="leftFooter">
+					<button type="submit" ng-disabled="userForm.$invalid">Save</button>
+					<button id="cancelButton" ng-click="reset()">Cancel</button>
+				</footer>
+			</form>
+		</section>
+	</section>
+	<footer class="pagefooter">Footer</footer>
+</body>
+</html>
